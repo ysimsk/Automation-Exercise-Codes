@@ -1,4 +1,4 @@
-@Automationexercise
+
 Feature: automation test1
   Scenario:Test Case 1 Register User
     Given Navigate to url http_automationexercise_com

@@ -83,6 +83,22 @@ public class AutomationExrcisePage {
     public WebElement statusAlertAlertSuccess;
     @FindBy (css = "[class='btn btn-success']")
     public WebElement btnSuccess;
+    @FindBy (xpath = "//*[text()='Login to your account']")
+    public WebElement youraccountvisibletext;
+
+    @FindBy(xpath = "(//*[@type='email'])[1]")
+    public WebElement useremail;
+
+    @FindBy(xpath = "(//*[@type='password'])[1]")
+    public WebElement userpassword;
+
+    @FindBy(xpath = "//*[@data-qa='login-button']")
+    public WebElement Login;
+
+    @FindBy(xpath = "(//*[@style='color:brown;'])[2]")
+    public WebElement deleteaccount1;
+
+
     public  void methodLogin(){
         Driver.getDriver().get(Configreader.getProperty("AutomationExUrl"));
         signUpLogin.click();

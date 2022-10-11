@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -136,5 +137,30 @@ public class Automationexercisestepdefinitions {
         String actual = automationExrcisePage.isdeletedaccount.getText();
         Assert.assertNotEquals(expected,actual,"that`is a BUG");
       //  Driver.quitDriver();
+    }
+
+
+
+    @Then("Verify Login to your account is visible")
+    public void verifyLoginToYourAccountIsVisible() {
+        automationExrcisePage.youraccountvisibletext.isDisplayed();
+    }
+
+    @Then("Enter correct email address and password")
+    public void enterCorrectEmailAddressAndPassword() {
+        automationExrcisePage.useremail.sendKeys("ysf2@gmail.com",Keys.ENTER);
+        automationExrcisePage.userpassword.sendKeys("12345",Keys.ENTER);
+    }
+
+    @Then("Click Delete Account button")
+    public void clickDeleteAccountButton(int num) {
+       automationExrcisePage.deleteaccount1.click();
+    }
+
+    @And("Verify that ACCOUNT DELETED!' is visible")
+    public void verifyThatACCOUNTDELETEDIsVisible() {
+        String expected = "ACCOUNT DELETED";
+        String actual = automationExrcisePage.isdeletedaccount.getText();
+        Assert.assertNotEquals(expected,actual,"that`is a BUG");
     }
 }
